@@ -1,0 +1,118 @@
+<!-- 这里是概括界面 -->
+{% extends 'IEAS_WEB/base.html' %}
+
+<!-- 继承base.html文件，并修改可修改部分。包括“block style”和“block info” -->
+{% block style %}
+
+    <!-- 以下style文件用于将主选择界面选择为概括按钮 -->
+    <style>
+        #value-4{
+            color: #fff;
+        }
+
+        .selection {
+            background-color: rgb(11 117 223);
+            display: inline-block;
+            transform: translateX(calc(var(--container_width) * 3/6));
+        }
+    </style>
+    <!-- 引入IEAS_WEB下static的style文件夹中的summary层叠样式表 -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/style/summary.css' %}">
+
+{% endblock %}
+
+
+
+{% block info %}
+    <div>
+        <table class="layout display responsive-table">
+            <thead>
+                <tr>
+        
+                    <selection>
+                    <th>ID</th>
+
+                    <th>
+                        <div class="dropdown">
+                            <select name="one" class="dropdown-select">
+                            <option value="">状态</option>
+                            <option value="1">未读</option>
+                            <option value="2">已读</option>
+                            </select>
+                        </div>
+                    </th>
+                    <th>时间</th>
+                    <th>
+                        <div class="dropdown">
+                            <select name="one" class="dropdown-select">
+                            <option value="">发件人</option>
+                            <option value="1">Option #1</option>
+                            <option value="2">Option #2</option>
+                            <option value="3">Option #3</option>
+                            </select>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <select name="one" class="dropdown-select">
+                            <option value="">收件人</option>
+                            <option value="1">Option #1</option>
+                            <option value="2">Option #2sadasda</option>
+                            <option value="3">Option #3</option>
+                            </select>
+                        </div>
+                    </th>
+                    <th>主题</th>
+                    <th>
+                        <div class="dropdown">
+                            <select name="one" class="dropdown-select">
+                            <option value="">文件名</option>
+                            <option value="1"><a href="{% url 'summary_print' op %}">{{op}} ksaljdla</a></option>
+                            <option value="2"><a href="{% url 'summary_print' op %}">{{op}} ksaljdla</a></option>
+                            <option><a href="{% url 'summary_print' op %}">{{op}} ksaljdla</a></option>
+                            </select>
+                        </div>
+                    </th>
+                    <th>概括内容</th>
+                    <th>详情</th>
+                </selection>         
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>140406</td>
+                    <td>Stet clestStets estSo 
+                    us estStet clita kasd gubergren, 
+                    no sea takimata sanctus esta sanctus est</td>
+                    <td>140406</td>
+                    <td>Stet clita kasd gubergren, no s
+                        ea takimata sanctus est</td>
+                    <td>140406</td>
+                    <td>Stet clita kasd gubergren, no s
+                        ea takimata sanctus est</td>
+                    <td>140406</td>
+                    <td>140406</td>
+                    <td>
+                        <a href="?">Edit</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="flex">
+        <ul> 
+            <li>&laquo;</li>
+            <li>1</li>
+            <li>...</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>...</li>
+            <li>11</li>
+            <li>&raquo;</li>
+        </ul>
+    </div>
+
+{% endblock %}

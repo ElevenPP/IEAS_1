@@ -1,0 +1,41 @@
+<!-- 这里是主界面 -->
+{% extends 'IEAS_WEB/base.html' %}
+
+{% block style %}
+<style>
+   /* 这是一个CSS样式规则,用于为选中的单选按钮添加样式。
+        当单选按钮被选中时,它的父级标签`label`的文本颜色将变为白色。*/
+        /* .radio-input label:has(input:checked) {
+        color: #fff;
+        } */
+
+        /* 这是一个CSS样式规则,用于为选中的单选按钮添加样式。
+        当单选按钮被选中时,它的父级标签`label`的文本颜色将变为白色,
+        同时,它的兄弟标签`selection`的背景颜色将变为`rgb(11, 117, 223)`。
+        同时,使用`transform: translateX()`来将`selection`标签向左移动,使其与`label`标签对齐。 */
+        /* .radio-input label:has(input:checked) ~ .selection {
+        background-color: rgb(11 117 223);
+        display: inline-block;
+        } */
+
+        #value-1{
+            color: #fff;
+        
+        }
+        .selection {
+        background-color: rgb(11 117 223);
+        display: inline-block;
+        transform: translateX(calc(var(--container_width) * 0/6));
+        }
+</style>
+{% endblock %}
+
+
+{% block info %}
+
+<h1>
+
+    这里是首页，关于项目的相关介绍及操作说明在此处！
+
+</h1>
+{% endblock %}

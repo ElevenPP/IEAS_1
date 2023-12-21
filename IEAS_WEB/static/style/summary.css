@@ -1,0 +1,128 @@
+/* 表格第一行的select选择界面 */
+.dropdown {
+display: inline-block;
+position: relative;
+overflow: hidden;
+height: 28px;
+padding-right: 18px;
+background: #f2f2f2;
+border: 1px solid;
+border-color: white #f7f7f7 whitesmoke;
+}
+
+.dropdown:before, .dropdown:after {
+content: '';
+position: absolute;
+z-index: 2;
+top: 9px;
+right: 10px;
+width: 0;
+height: 0;
+border: 4px dashed;
+border-color: #888888 transparent;
+pointer-events: none;
+}
+
+.dropdown:before {
+border-bottom-style: solid;
+border-top: none;
+}
+
+.dropdown:after {
+margin-top: 7px;
+border-top-style: solid;
+border-bottom: none;
+}
+
+.dropdown-select {
+position: relative;
+width: 130%;
+margin: 0;
+padding: 6px 8px 6px 10px;
+height: 28px;
+line-height: 14px;
+font-size: 12px;
+color: #62717a;
+text-shadow: 0 1px white;
+background: #f2f2f2; /* Fallback for IE 8 */
+background: rgba(0, 0, 0, 0) !important; /* "transparent" doesn't work with Opera */
+border: 0;
+border-radius: 0;
+-webkit-appearance: none;
+appearance: none;
+}
+
+.dropdown-select:focus {
+z-index: 3;
+width: 100%;
+color: #394349;
+outline: 2px solid #49aff2;
+outline: 2px solid -webkit-focus-ring-color;
+outline-offset: -2px;
+}
+
+/* 翻页样式表 */
+.flex {
+width: 300px;
+height: 28px;
+line-height: 28px;
+background-color: white;
+float: right;
+}
+.flex ul {
+display: flex;
+padding: 0;
+margin: 0;
+box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+}
+.flex ul li {
+flex: 1;
+list-style: none;
+text-align: center;
+position: relative;
+font-size: 20px;
+font-weight: bold;
+transition: 0.5s ease;
+cursor: pointer;
+user-select: none;
+}
+.flex ul li:hover {
+background-color: rgba(255, 255, 255, 0.25);
+color: #0b97ee;
+}
+
+/* 表格的相关内容 */
+table   a{
+color: #739931;
+}
+
+.page{
+max-width: 100%;
+margin: 0 auto;
+padding: 1em;
+background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAQElEQVQIW2P89OvDfwYo+PHjJ4zJwMHBzsAIk0SXAKkCS2KTAEu++vQSbizIKGQAl0SXAJkGlsQmAbcT2Shk+wH0sCzAEOZW1AAAAABJRU5ErkJggg==);
+}
+
+table th,
+table td{
+    text-align: left;
+}
+
+table.layout{
+width: 100%;
+border-collapse: collapse;
+}
+
+table.display{
+margin: 1em 0;
+}
+
+table.display th,
+table.display td{
+border: 1px solid #B3BFAA;
+padding: .5em 1em;
+}
+
+table.display th{ 
+background: #D5E0CC; 
+}

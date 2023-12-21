@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title_h2{
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 3px;
+        }
+
+        .radio-input input {
+        display: none;
+        }
+
+        .radio-input {
+        --container_width: 800px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        border-radius: 9999px;
+        background-color: #fff;
+        color: #000000;
+        width: var(--container_width);
+        overflow: hidden;
+        border: 1px solid rgba(53, 52, 52, 0.226);
+        margin: 2px auto;
+        }
+
+        .radio-input label {
+        width: 100%;
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        font-weight: 600;
+        letter-spacing: -1px;
+        font-size: 14px;
+        }
+
+        .selection {
+        display: none;
+        position: absolute;
+        height: 100%;
+        width: calc(var(--container_width) / 6);
+        z-index: 0;
+        left: 0;
+        top: 0;
+        transition: .15s ease;
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .title_h3{
+            text-align: right;
+            margin-top: -20px;
+            margin-bottom: -2px;
+        }
+    </style>
+    {% block style %}
+    
+    {% endblock %}
+</head>
+<body>
+    <h2 class="title_h2">智能分析处理系统</h2>
+    <h3 class="title_h3">用户：{{ request.session.session_username }}/<a href="{% url 'user_logout' %}">注销</a></h3>
+    <div class="radio-input" id="div1">       
+        <label>
+            <input value="value-1" name="value-radio" id="value-1" type="radio" checked="">
+            <a href="{% url 'index_view' %}">首页</a>
+        </label>
+
+        <label>
+            <input value="value-2" name="value-radio" id="value-2" type="radio">
+            <a href="{% url 'upload_view' %}">上传</a>
+        </label>
+
+        <label>
+            <input value="value-3" name="value-radio" id="value-3" type="radio">
+            <a href="{% url 'translate_view' %}">翻译</a>
+        </label>
+
+        <label>
+            <input value="value-4" name="value-radio" id="value-4" type="radio">
+            <a href="{% url 'summary_view' %}">概括</a>
+        </label>
+
+        <label>
+            <input value="value-5" name="value-radio" id="value-5" type="radio">
+            <a href="{% url 'adress_view' %}">码址</a>
+        </label>
+
+        <label>
+            <input value="value-6" name="value-radio" id="value-6" type="radio">
+            <a href="{% url 'community_view' %}">通联</a>
+        </label>
+
+        <span class="selection"></span>
+      </div>
+<hr>
+      <div>
+        {% block info %}
+        <h2 style="text-align: center;">欢迎登录智能分析处理系统</h2>
+        {% endblock %}
+      </div>
+    
+</body>
+</html>
