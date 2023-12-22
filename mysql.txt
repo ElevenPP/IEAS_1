@@ -1,0 +1,22 @@
+CREATE TABLE `ieas_eamil` (
+  `Email_ID` int unsigned NOT NULL AUTO_INCREMENT COMMENT '邮件ID',
+  `Email_upload_time` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '邮件的入库时间',
+  `Email_upload_username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '邮件上传的用户名',
+  `Email_user_readtimes` bit(1) DEFAULT b'0' COMMENT '是否已读',
+  `Email_user_mark` bit(1) DEFAULT b'0' COMMENT '重点标记（是否）',
+  `Email_user_notes` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '用户备注',
+  `Email_sender_name` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '发件人姓名',
+  `Email_sender_address` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '发件人邮箱地址',
+  `Email_recipient_name` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '收件人姓名',
+  `Email_recipient_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '收件人邮箱地址',
+  `Email_send_time` timestamp NULL DEFAULT NULL COMMENT '邮件发送时间',
+  `Email_title` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '邮件标题',
+  `Email_content` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '邮件内容（正文）',
+  `Email_sender_apartment` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '发件人工作单位',
+  `Email_recipient_apartment` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '收件人工作单位',
+  `Email_local_adress` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '邮件本地地址',
+  `Email_content_chinese` longtext COLLATE utf8mb4_general_ci COMMENT '邮件中文译文',
+  `Email_content_english` longtext COLLATE utf8mb4_general_ci COMMENT '邮件英文译文',
+  `Email_summary` text COLLATE utf8mb4_general_ci COMMENT '邮件内容概括',
+  PRIMARY KEY (`Email_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
